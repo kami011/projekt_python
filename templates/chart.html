@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+	
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  {{ message }}
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+
+	
+{% endfor %}
+
+
+
+	<h1>Raport na podstawie danych GUS!</h1>
+	<br/>
+	<p>You Are Logged In!</p>
+
+	 <a href="{{ url_for('logout')}}" class="btn btn-secondary btn-sm">Logout</a>
+	 </div>
+<br/>
+	 </div>
+<style>
+    .chart-container {
+        text-align: center; 
+    }
+
+    .chart-container h1 {
+        text-align: center; 
+    }
+</style>
+
+<div class="chart-container">
+    <h1>Studenci Ogółem Studia Stacjonarne</h1>
+    <img src="{{ chart_file_stacjonarne }}" alt="Chart" width="100%">
+</div>
+<div class="chart-container">
+    <h1>Studenci Ogółem Studia Niestacjonarne</h1>
+    <img src="{{ chart_file_niestacjonarne }}" alt="Chart" width="100%">
+</div>
+
+{% endblock %}

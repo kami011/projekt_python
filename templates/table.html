@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Add a button to export the table as CSV -->
+<button onclick="exportTableToCSV('data.csv')" class="btn btn-primary">Export CSV</button>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dane GUS - Studenci i Absolwenci w Filiach</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dane GUS - Studenci w Filiach</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Województwo</th>
+                <th>Rok</th>
+                <th>Ilość</th>
+                <th>Kategoria</th>
+                <th>Płeć</th>
+                <th>Tryb Studiów</th>
+                <!-- Add more table headers if needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row.name }}</td>
+                <td>{{ row.year }}</td>
+                <td>{{ row.value }}</td>
+                <td>{{ row.category }}</td>
+                <td>{{ row.gender }}</td>
+                <td>{{ row.study_type }}</td>
+                <!-- Add more table cells if needed -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+{% endblock %}

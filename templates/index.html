@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witaj w mojej aplikacji Flask!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+            color: #666;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Witaj w mojej aplikacji Flask!</h1>
+        <p>Cieszę się, że tu jesteś! Ta aplikacja została stworzona w ramach projektu z przedmiotu "Języki Obiektowe" z wykorzystaniem języka Python oraz frameworku Flask.</p>
+
+        <p>Na tej stronie, korzystając z systemu logowania opartego o bazę danych MySQL, odkryjesz wybrane dane rzeczywiste z Głównego Urzędu Statystycznego w formie tabeli. Dodatkowo, w zakładce "Raport" zaprezentowane są analizy danych, które pomagają w lepszym zrozumieniu prezentowanych informacji.</p>
+
+        <p>Autor:<br>
+            Michna Natalia
+        </p>
+    </div>
+    <div class="footer">
+        &copy; 2024 Moja aplikacja Flask. Wszelkie prawa zastrzeżone.
+    </div>
+</body>
+</html>
+	
+
+
+{% endblock %}

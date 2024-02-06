@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+	
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+	  {{ message }}
+	  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>
+
+	
+{% endfor %}
+
+
+{% if name %}
+	<h1>Update User.</h1>
+	<br/><br/><br/>
+
+<table class="table table-hover table-bordered table-striped">
+{% for our_user in our_users %}
+	<tr>
+	<td>{{ our_user.id }}. {{ our_user.name }} - {{ our_user.email }} </td>
+</tr>
+{% endfor %}
+
+</table>
+
+
+{% else %}
+	<h1>Update User</h1>
+	<br/>
+<div class="shadow p-3 mb-5 bg-body rounded">
+	<form action= "/update/{{name_to_update.id}}" method="POST">
+		{{ form.hidden_tag() }}
+
+		{{ form.name.label(class="form-label") }}
+		<!--set value return the value in the form, so it's easier to know which record we are updating-->
+		{{ form.name(class="form-control",
+		value = name_to_update.name) }}
+		<br/>
+		
+		{{ form.email.label(class="form-label") }}
+		<!--set value return the value in the form, so it's easier to know which record we are updating-->
+		{{ form.email(class="form-control",
+		value = name_to_update.email) }}
+		<br/>
+
+		{{ form.submit(class="btn btn-secondary") }}
+	<!--adding link for deletion-->
+	<a href ="{{ url_for('delete', id = id)}}" class = "btn btn-danger">Delete</a>
+
+
+	</form>
+
+</div>
+<br/><br/><br/>
+
+
+{% endif %}
+
+{% endblock %}
