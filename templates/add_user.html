@@ -14,7 +14,7 @@
 
 
 {% if name %}
-	<h1>User Added!</h1>
+	<h1>Użytkownik Dodany!</h1>
 	<br/><br/><br/>
 
 <table class="table table-hover table-bordered table-striped">
@@ -24,7 +24,7 @@
 	<td>{{ our_user.id }}. <a href ="{{url_for('update', id = our_user.id)}}">
 	{{ our_user.name }}</a> - {{ our_user.email }} 
 	<!-- href- allows to add link to delete user-->
-	- <a href ="{{url_for('delete', id = our_user.id)}}">Delete</a></td>
+	- <a href ="{{url_for('delete', id = our_user.id)}}">Usuń użytkownika</a></td>
 </tr>
 {% endfor %}
 
@@ -33,7 +33,7 @@
 
 
 {% else %}
-	<h1>User List:</h1>
+	<h1>Dodaj Użytkownika</h1>
 	<br/>
 <div class="shadow p-3 mb-5 bg-body rounded">
 	<form method="POST">
@@ -83,7 +83,7 @@
 - {{our_user.user_name }}
  - {{ our_user.email }} -
  PW:{{ our_user.password_hash }} -
-<a href ="{{url_for('delete', id = our_user.id)}}">Delete</a>
+<a href ="{{url_for('delete', id = our_user.id)}}">Usuń</a>
   </td>
 </tr>
 {% endfor %}
